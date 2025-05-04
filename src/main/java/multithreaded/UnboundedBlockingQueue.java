@@ -38,7 +38,7 @@ class MessageQueue {
 
 }
 
-public class MultithreadedMessageQueue {
+public class UnboundedBlockingQueue {
 
     public static void main(String[] args) {
         MessageQueue messageQueue = new MessageQueue();
