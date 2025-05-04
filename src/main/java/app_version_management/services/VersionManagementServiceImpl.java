@@ -74,13 +74,13 @@ public class VersionManagementServiceImpl implements VersionManagementService {
 
     @Override
     public void releaseVersion(String appName, Float versionId, String releaseStrategyName) {
-        RollOutStrategy rolloutStrategy = RollOutStrategy.from(releaseStrategyName);
-        if (rolloutStrategy.equals(RollOutStrategy.PERCENTAGE)) {
-            rollOutService.rollout(appName, versionId, new PercentageRollOutStrategy());
-        }
-        if (rolloutStrategy.equals(RollOutStrategy.BETA) {
-            rollOutService.rollout(appName, versionId, new BetaRollOutStrategy());
-        }
+//        RollOutStrategy rolloutStrategy = RollOutStrategy.from(releaseStrategyName);
+//        if (rolloutStrategy.equals(RollOutStrategy.PERCENTAGE)) {
+//            rollOutService.rollout(appName, versionId, new PercentageRollOutStrategy());
+//        }
+//        if (rolloutStrategy.equals(RollOutStrategy.BETA) {
+//            rollOutService.rollout(appName, versionId, new BetaRollOutStrategy());
+//        }
     }
 
     @Override
