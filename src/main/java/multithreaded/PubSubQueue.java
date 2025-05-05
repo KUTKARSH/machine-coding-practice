@@ -5,7 +5,10 @@ import lombok.Getter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.concurrent.*;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.LinkedBlockingQueue;
 
 class Topic {
 
@@ -24,7 +27,7 @@ class Topic {
     }
 
     public void publish(String msg) {
-        for (Subscriber subscriber: subscribers) {
+        for (Subscriber subscriber : subscribers) {
             subscriber.push(msg);
         }
     }
@@ -58,7 +61,7 @@ class PubSubQueueSystem {
     private final ConcurrentHashMap<String, Topic> topicMap;
 
     public PubSubQueueSystem() {
-        topicMap = new ConcurrentHashMap<String, Topic> ();
+        topicMap = new ConcurrentHashMap<String, Topic>();
     }
 
     public void subscribe(String topic, Subscriber subscriber) {
@@ -121,7 +124,7 @@ public class PubSubQueue {
         publishers.submit(() -> {
             while (true) {
                 Integer num = new Random().nextInt(100);
-                System.out.println("Publishing message: " + String.valueOf(num) + " to news topic");
+                System.out.println("Publishing message: " + num + " to news topic");
                 pubSubQueueSystem.publish("news", String.valueOf(num));
                 Thread.sleep(1000);
             }
@@ -129,7 +132,7 @@ public class PubSubQueue {
         publishers.submit(() -> {
             while (true) {
                 Integer num = new Random().nextInt(1000);
-                System.out.println("Publishing message: " + String.valueOf(num) + " to sports topic");
+                System.out.println("Publishing message: " + num + " to sports topic");
                 pubSubQueueSystem.publish("sports", String.valueOf(num));
                 Thread.sleep(1000);
             }
