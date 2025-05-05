@@ -2,6 +2,7 @@ package multithreaded;
 
 import lombok.Getter;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.*;
@@ -15,7 +16,7 @@ class Topic {
 
     public Topic(String name) {
         this.name = name;
-        subscribers = new CopyOnWriteArrayList<>();
+        subscribers = new ArrayList<>();
     }
 
     public void subscribe(Subscriber subscriber) {
