@@ -1,4 +1,4 @@
-package designpatterns;
+package forgetfuldesignpatterns;
 
 import lombok.AllArgsConstructor;
 
