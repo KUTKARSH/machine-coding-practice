@@ -57,7 +57,7 @@ class NewsAgency {
 
 }
 
-public class NotificationSystem {
+public class ObserverPattern {
 
     public static void main(String[] args) {
         NewsAgency agency = new NewsAgency();

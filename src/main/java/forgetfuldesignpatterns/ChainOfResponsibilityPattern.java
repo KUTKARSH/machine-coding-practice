@@ -67,7 +67,7 @@ class ErrorLogger extends CustomLogger {
 }
 
 
-public class SimpleLogger {
+public class ChainOfResponsibilityPattern {
 
     public static void main(String[] args) {
 
