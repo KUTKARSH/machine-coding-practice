@@ -1,5 +1,3 @@
-package forgetfuldesignpatterns;
-
 import lombok.AllArgsConstructor;
 
 import java.util.ArrayList;
@@ -57,7 +55,7 @@ class NewsAgency {
 
 }
 
-public class ObserverPattern {
+public class Notifier {
 
     public static void main(String[] args) {
         NewsAgency agency = new NewsAgency();

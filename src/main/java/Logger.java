@@ -1,5 +1,3 @@
-package forgetfuldesignpatterns;
-
 import lombok.Setter;
 
 /**
@@ -67,7 +65,7 @@ class ErrorLogger extends CustomLogger {
 }
 
 
-public class ChainOfResponsibilityPattern {
+public class Logger {
 
     public static void main(String[] args) {
 

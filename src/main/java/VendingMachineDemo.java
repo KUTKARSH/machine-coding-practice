@@ -1,6 +1,3 @@
-package forgetfuldesignpatterns;
-
-
 import java.util.*;
 
 // Core: Item.java
@@ -194,7 +191,7 @@ class DispensingState implements VendingState {
     }
 }
 
-// Core: VendingMachine.java
+// Core: VendingMachineDemo.java
 class VendingMachine {
     private VendingState idleState;
     private VendingState hasMoneyState;
@@ -242,7 +239,7 @@ class VendingMachine {
 }
 
 // Demo: Main.java
-public class StatePattern {
+public class VendingMachineDemo {
     public static void main(String[] args) {
         VendingMachine machine = new VendingMachine();
         machine.getInventory().addItem(new Item("A1", "Coke", 1.5), 5);
