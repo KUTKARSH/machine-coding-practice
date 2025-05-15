@@ -12,6 +12,7 @@
 - **Strategy**: [behavioral]
 - **Observer**: [behavioral]
 - **Chain of Responsibility**: [behavioral]
+- **State**: [behavioral]
 
 ---
 
