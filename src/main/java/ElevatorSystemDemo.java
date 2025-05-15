@@ -49,10 +49,12 @@ class Elevator {
     ElevatorState getState() { return state; }
     boolean isIdle() { return direction == Direction.IDLE && destinations.isEmpty(); }
 
-    void addDestination(int floor) {
+    public void addDestination(int floor) {
         destinations.add(floor);
-        if (currentFloor < floor) direction = Direction.UP;
-        else if (currentFloor > floor) direction = Direction.DOWN;
+        if (direction == Direction.IDLE) {
+            if (currentFloor < floor) direction = Direction.UP;
+            else if (currentFloor > floor) direction = Direction.DOWN;
+        }
     }
 
     void step() {
