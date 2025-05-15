@@ -1,5 +1,7 @@
 // SnakeAndLadderGame.java
+
 import java.util.*;
+import java.util.logging.Logger;
 
 class Snake {
     private final int head;
@@ -113,6 +115,8 @@ class Game {
 }
 
 public class SnakeAndLadderGame {
+
+    private static final Logger LOGGER = Logger.getLogger(SnakeAndLadderGame.class.getName());
     public static void main(String[] args) {
         List<Snake> snakes = Arrays.asList(
                 new Snake(14, 7),
@@ -125,7 +129,7 @@ public class SnakeAndLadderGame {
                 new Ladder(5, 8),
                 new Ladder(11, 26)
         );
-
+        LOGGER.info("Hi");
         Board board = new Board(50, snakes, ladders);
         List<Player> players = Arrays.asList(new Player("Alice"), new Player("Bob"));
 
