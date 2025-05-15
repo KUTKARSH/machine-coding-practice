@@ -1,3 +1,5 @@
+package Splitwise;
+
 import java.util.*;
 
 // USER CLASS
@@ -120,7 +122,7 @@ class ExpenseManager {
 
     public void addExpense(Expense expense) {
         if (!expense.isValid()) {
-            System.out.println("❌ Invalid Expense");
+            System.out.println("❌ Invalid Splitwise.Expense");
             return;
         }
 
@@ -177,15 +179,15 @@ public class SplitwiseSystem {
         manager.addUser(u2);
         manager.addUser(u3);
 
-        // Equal Split
+        // Equal Splitwise.Split
         List<Split> dinnerSplits = Arrays.asList(new EqualSplit(u1), new EqualSplit(u2), new EqualSplit(u3));
         manager.addExpense(new EqualExpense(300, u1, dinnerSplits, "Dinner"));
 
-        // Exact Split
+        // Exact Splitwise.Split
         List<Split> snacksSplits = Arrays.asList(new ExactSplit(u2, 70), new ExactSplit(u3, 30));
         manager.addExpense(new ExactExpense(100, u1, snacksSplits, "Snacks"));
 
-        // Percent Split
+        // Percent Splitwise.Split
         List<Split> taxiSplits = Arrays.asList(new PercentSplit(u1, 40), new PercentSplit(u2, 60));
         manager.addExpense(new PercentExpense(200, u3, taxiSplits, "Taxi"));
 

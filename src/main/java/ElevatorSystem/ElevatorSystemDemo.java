@@ -1,3 +1,5 @@
+package ElevatorSystem;
+
 import java.util.*;
 
 // Enums
@@ -13,7 +15,7 @@ enum RequestType {
     INTERNAL, EXTERNAL
 }
 
-// Request.java
+// ElevatorSystem.Request.java
 class Request {
     private final int floor;
     private final Direction direction;
@@ -30,7 +32,7 @@ class Request {
     RequestType getType() { return type; }
 }
 
-// Elevator.java
+// ElevatorSystem.Elevator.java
 
 class Elevator {
     private final int id;
@@ -77,12 +79,12 @@ class Elevator {
         } else {
             destinations.remove(currentFloor);
             state = ElevatorState.DOORS_OPEN;
-            System.out.println("Elevator " + id + " opening doors at floor " + currentFloor);
+            System.out.println("ElevatorSystem.Elevator " + id + " opening doors at floor " + currentFloor);
         }
     }
 }
 
-// ElevatorController.java
+// ElevatorSystem.ElevatorController.java
 
 class ElevatorController {
     private final List<Elevator> elevators;
@@ -112,7 +114,7 @@ class ElevatorController {
             bestElevator = elevators.get(0); // fallback
         }
 
-        System.out.println("Assigning Elevator " + bestElevator.getId() + " to floor " + floor);
+        System.out.println("Assigning ElevatorSystem.Elevator " + bestElevator.getId() + " to floor " + floor);
         bestElevator.addDestination(floor);
     }
 
@@ -129,12 +131,12 @@ class ElevatorController {
 
     void status() {
         for (Elevator e : elevators) {
-            System.out.println("Elevator " + e.getId() + " - Floor: " + e.getCurrentFloor() + ", Direction: " + e.getDirection() + ", State: " + e.getState());
+            System.out.println("ElevatorSystem.Elevator " + e.getId() + " - Floor: " + e.getCurrentFloor() + ", ElevatorSystem.Direction: " + e.getDirection() + ", State: " + e.getState());
         }
     }
 }
 
-// ElevatorSystemDemo.java
+// ElevatorSystem.ElevatorSystemDemo.java
 class ElevatorSystem {
     private final ElevatorController controller;
 

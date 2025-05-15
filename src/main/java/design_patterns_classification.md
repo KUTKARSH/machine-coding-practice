@@ -10,7 +10,7 @@
 
 ## Behavioral Patterns
 - **Strategy**: [behavioral]
-- **Observer**: [behavioral]
+- **Notification.Observer**: [behavioral]
 - **Chain of Responsibility**: [behavioral]
 - **State**: [behavioral]
 

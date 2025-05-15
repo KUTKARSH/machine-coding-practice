@@ -1,4 +1,4 @@
-// FoodDeliverySystem.java
+package FoodDeliverySystem;// FoodDeliverySystem.FoodDeliverySystem.java
 import java.util.*;
 
 // ---------------------- MODELS ----------------------
@@ -164,9 +164,9 @@ class OrderService {
 
     public void printOrderDetails(String orderId) {
         Order o = orders.get(orderId);
-        System.out.println("Order ID: " + o.id);
+        System.out.println("FoodDeliverySystem.Order ID: " + o.id);
         System.out.println("User: " + o.user.name);
-        System.out.println("Restaurant: " + o.restaurant.name);
+        System.out.println("FoodDeliverySystem.Restaurant: " + o.restaurant.name);
         System.out.println("Items:");
         for (MenuItem i : o.items) System.out.println("- " + i.name + " : Rs " + i.price);
         System.out.println("Total: Rs " + o.totalAmount);

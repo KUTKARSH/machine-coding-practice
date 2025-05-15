@@ -50,8 +50,8 @@ class Meeting {
     private Integer bookingId;
     private Date startTime;
     private Date endTime;
-    private List<User> users;
-    public Meeting(Date startTime, Date endTime, List<User> users) {
+    private List<Attendee> users;
+    public Meeting(Date startTime, Date endTime, List<Attendee> users) {
         this.startTime = startTime;
         this.endTime = endTime;
         this.users = users;
@@ -91,7 +91,7 @@ class RoomManager {
         return vacantRoom;
     }
 
-    public Meeting bookRoom(Date startTime, Date endTime, List<User> users) {
+    public Meeting bookRoom(Date startTime, Date endTime, List<Attendee> users) {
         Room vacantRoom = findVacantRoom(startTime, endTime);
         if (Objects.nonNull(vacantRoom)) {
             Meeting meeting = new Meeting(startTime, endTime, users);

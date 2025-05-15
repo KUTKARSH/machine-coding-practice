@@ -1,3 +1,5 @@
+package LoggingSystem;
+
 import lombok.Setter;
 
 /**

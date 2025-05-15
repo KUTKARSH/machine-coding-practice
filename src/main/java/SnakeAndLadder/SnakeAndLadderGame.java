@@ -1,4 +1,4 @@
-// SnakeAndLadderGame.java
+package SnakeAndLadder;// SnakeAndLadder.SnakeAndLadderGame.java
 
 import java.util.*;
 import java.util.logging.Logger;

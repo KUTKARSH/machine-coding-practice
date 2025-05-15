@@ -23,16 +23,16 @@ This class handles persistence and communication — two reasons to change.
 ### ✅ Good Example
 
 ```java
-class User {
+User {
     String name;
 }
 
 class UserRepository {
-    void save(User user) { /* ... */ }
+    void save(SlackChatApp.Splitwise.User user) { /* ... */ }
 }
 
 class EmailService {
-    void sendWelcomeEmail(User user) { /* ... */ }
+    void sendWelcomeEmail(SlackChatApp.Splitwise.User user) { /* ... */ }
 }
 ```
 

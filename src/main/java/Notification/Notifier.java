@@ -1,10 +1,12 @@
+package Notification;
+
 import lombok.AllArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * A demonstration of Observer Pattern
+ * A demonstration of Notification.Observer Pattern
  */
 
 
@@ -66,7 +68,7 @@ public class Notifier {
         agency.subscribe(emailSubscriber);
         agency.subscribe(smsSubscriber);
 
-        agency.publish("Observer Pattern Implemented!");
+        agency.publish("Notification.Observer Pattern Implemented!");
     }
 
 }
