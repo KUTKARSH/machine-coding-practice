@@ -1,6 +1,8 @@
+package VendingMachine;
+
 import java.util.*;
 
-// Core: Item.java
+// Core: VendingMachine.Item.java
 class Item {
     private final String id;
     private final String name;
@@ -17,7 +19,7 @@ class Item {
     public double getPrice() { return price; }
 }
 
-// Core: Inventory.java
+// Core: VendingMachine.Inventory.java
 
 class Inventory {
     private final Map<String, Item> items = new HashMap<>();
@@ -50,12 +52,12 @@ class Inventory {
     }
 }
 
-// Payment: Payment.java
+// VendingMachine.Payment: VendingMachine.Payment.java
 interface Payment {
     boolean pay(double amount);
 }
 
-// Payment: CashPayment.java
+// VendingMachine.Payment: VendingMachine.CashPayment.java
 class CashPayment implements Payment {
     @Override
     public boolean pay(double amount) {
@@ -64,7 +66,7 @@ class CashPayment implements Payment {
     }
 }
 
-// Payment: CardPayment.java
+// VendingMachine.Payment: VendingMachine.CardPayment.java
 class CardPayment implements Payment {
     @Override
     public boolean pay(double amount) {
@@ -73,18 +75,18 @@ class CardPayment implements Payment {
     }
 }
 
-// Payment: PaymentFactory.java
+// VendingMachine.Payment: VendingMachine.PaymentFactory.java
 class PaymentFactory {
     public static Payment getPaymentMethod(String type) {
         switch (type.toLowerCase()) {
             case "cash": return new CashPayment();
             case "card": return new CardPayment();
-            default: throw new IllegalArgumentException("Unsupported Payment Type");
+            default: throw new IllegalArgumentException("Unsupported VendingMachine.Payment Type");
         }
     }
 }
 
-// State Pattern: VendingState.java
+// State Pattern: VendingMachine.VendingState.java
 interface VendingState {
     void insertMoney(double amount);
     void selectItem(String itemId);
@@ -92,7 +94,7 @@ interface VendingState {
     void cancel();
 }
 
-// State: IdleState.java
+// State: VendingMachine.IdleState.java
 class IdleState implements VendingState {
     private VendingMachine machine;
 
@@ -119,7 +121,7 @@ class IdleState implements VendingState {
     }
 }
 
-// State: HasMoneyState.java
+// State: VendingMachine.HasMoneyState.java
 class HasMoneyState implements VendingState {
     private VendingMachine machine;
 
@@ -133,7 +135,7 @@ class HasMoneyState implements VendingState {
 
     public void selectItem(String itemId) {
         if (!machine.getInventory().isAvailable(itemId)) {
-            System.out.println("Item out of stock.");
+            System.out.println("VendingMachine.Item out of stock.");
             machine.setState(machine.getIdleState());
             return;
         }
@@ -158,7 +160,7 @@ class HasMoneyState implements VendingState {
     }
 }
 
-// State: DispensingState.java
+// State: VendingMachine.DispensingState.java
 class DispensingState implements VendingState {
     private VendingMachine machine;
 
@@ -191,7 +193,7 @@ class DispensingState implements VendingState {
     }
 }
 
-// Core: VendingMachineDemo.java
+// Core: VendingMachine.VendingMachineDemo.java
 class VendingMachine {
     private VendingState idleState;
     private VendingState hasMoneyState;
