@@ -1,4 +1,4 @@
-package meesho;
+package CabBookingSystem;
 
 import lombok.Getter;
 import lombok.Setter;
