@@ -219,7 +219,6 @@ public class CabBookingDemo {
          System.out.println();
          Trip trip1 = system.bookCab("P1", 5, 15);
          Trip trip2 = system.bookCab("P2", 20, 15);
-         system.endRide(trip1.getTripId());
          if (Objects.nonNull(trip1)) {
              system.endRide(trip1.getTripId());
          }
